@@ -1,0 +1,19 @@
+<%- include("partials/header") -%>
+<h1>Erase/Edit a Post</h1>
+<div class="row">
+      <% posts.forEach(function(p){ %>
+        <div class="card col-lg-4 col-md-6 pricing-col">
+          <div class="card-header">
+            <h2 class="crd-title"><%=p.name%></h2>
+          </div>
+          <div class="card-body">
+            <form>
+              <input type="hidden" name="title" value="<%=p.name%>">
+              <button type="submit" formaction="/edit/<%=p.name%>" formmethod="get" class="btn btn-lg btn-block btn-primary">Edit</button>
+              <button type="submit"  formaction="/dev" formmethod="post" class="btn btn-lg btn-block btn-danger">Remove</button>
+            </form>
+          </div>
+        </div>
+      <%})%>
+</div>
+<%- include("partials/footer") -%>

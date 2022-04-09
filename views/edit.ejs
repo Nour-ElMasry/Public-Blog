@@ -1,0 +1,14 @@
+<%- include("partials/header") -%>
+<h1>Edit post</h1>
+<div class="row">
+    <div class="col-md-12">
+      <form action="/edit/<%=editTitle%>" method="post">
+        <label>Title:</label>
+        <input name="editedTitle" value="<%=editTitle%>" class="form-control" autocomplete="off"><br>
+        <label>Post Content:</label><br>
+        <textarea name="editedContent" rows="8" cols="80" class="form-control"><%= editContent%></textarea><br>
+        <button type="submit" name="button" class="btn btn-primary form-control">Submit</button>
+      </form>
+    </div>
+</div>
+<%- include("partials/footer") -%>

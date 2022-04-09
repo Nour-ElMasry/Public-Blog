@@ -1,0 +1,23 @@
+<%- include("partials/header") -%>
+
+    <div class="home container container--py">
+        <h1>Home</h1>
+        <p>This is a Blog website created by me, Elafifi Nour-Eldin. On this website I have only practiced my EJS templating skills and have used my first ever database (MongoDb) - hence this wbesite is only desktop design compatible</p>
+        <p>The functionalities of this website are as following:</p>
+        <ul>
+            <li> Composing Posts </li>
+            <li> Viewing Posts </li>
+            <li> Editing Posts </li>
+            <li> Deleting Posts </li>
+        </ul>
+
+        <% posts.forEach(function(p){ %>
+            <h1>
+                <%= p.name%>
+            </h1>
+            <p>
+                <%=p.content.substring(0, 250) + "..." %><a href="/posts/<%= p.name %>">Read more</a></p>
+            <%})%>
+    </div>
+
+    <%- include("partials/footer") -%>
